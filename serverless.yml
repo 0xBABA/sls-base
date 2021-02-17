@@ -4,13 +4,14 @@ service:
 plugins:
   - serverless-bundle
   - serverless-pseudo-parameters
+  - serverless-iam-roles-per-function
 
 provider:
   name: aws
   runtime: nodejs12.x
   memorySize: 256
   stage: ${opt:stage, 'dev'}
-  
+
 functions:
   hello:
     handler: src/handlers/hello.handler
